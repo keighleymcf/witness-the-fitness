@@ -1,0 +1,100 @@
+{
+  "testRunner": "jest",
+  "runnerConfig": "jest.config.json",
+  "apps": {
+    "ios.debug": {
+      "type": "ios.app",
+      "build": "cd ../witness-client/ios && xcodebuild -workspace WitnessClient.xcworkspace -scheme WitnessClient -configuration Debug -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 13' -derivedDataPath ./build -quiet",
+      "binaryPath": "../witness-client/ios/build/Build/Products/Debug-iphonesimulator/WitnessClient.app"
+    },
+    "ios.release": {
+      "type": "ios.app",
+      "build": "cd ../witness-client/ios && xcodebuild -workspace WitnessClient.xcworkspace -scheme WitnessClient -configuration Release -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 13' -derivedDataPath ./build -quiet",
+      "binaryPath": "../witness-client/ios/build/Build/Products/Release-iphonesimulator/WitnessClient.app"
+    },
+
+    "ios.eas": {
+      "type": "ios.app",
+      "build": "npx nx run witness-client:download --platform ios --distribution simulator --output=apps/witness-client/dist/",
+      "binaryPath": "../witness-client/dist/WitnessClient.app"
+    },
+    "ios.local": {
+      "type": "ios.app",
+      "build": "npx nx run witness-client:build --platform ios --profile preview --wait --local --no-interactive --output=apps/witness-client/dist/",
+      "binaryPath": "../witness-client/dist/WitnessClient.app"
+    },
+
+    "android.debug": {
+      "type": "android.apk",
+      "build": "cd ../witness-client/android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug",
+      "binaryPath": "../witness-client/android/app/build/outputs/apk/debug/app-debug.apk"
+    },
+    "android.release": {
+      "type": "android.apk",
+      "build": "cd ../witness-client/android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release",
+      "binaryPath": "../witness-client/android/app/build/outputs/apk/release/app-release.apk"
+    },
+
+    "android.eas": {
+      "type": "ios.app",
+      "build": "npx nx run witness-client:download --platform android --output=apps/witness-client/dist/",
+      "binaryPath": "../witness-client/dist/WitnessClient.apk"
+    },
+    "android.local": {
+      "type": "ios.app",
+      "build": "npx nx run witness-client:build --platform android --profile preview --wait --local --no-interactive --output=apps/witness-client/dist/",
+      "binaryPath": "../witness-client/dist/WitnessClient.apk"
+    }
+  },
+  "devices": {
+    "simulator": {
+      "type": "ios.simulator",
+      "device": {
+        "type": "iPhone 13"
+      }
+    },
+    "emulator": {
+      "type": "android.emulator",
+      "device": {
+        "avdName": "Pixel_4a_API_30"
+      }
+    }
+  },
+  "configurations": {
+    "ios.sim.release": {
+      "device": "simulator",
+      "app": "ios.release"
+    },
+    "ios.sim.debug": {
+      "device": "simulator",
+      "app": "ios.debug"
+    },
+
+    "ios.sim.eas": {
+      "device": "simulator",
+      "app": "ios.eas"
+    },
+    "ios.sim.local": {
+      "device": "simulator",
+      "app": "ios.local"
+    },
+
+    "android.emu.release": {
+      "device": "emulator",
+      "app": "android.release"
+    },
+    "android.emu.debug": {
+      "device": "emulator",
+      "app": "android.debug"
+    },
+
+    "android.sim.eas": {
+      "device": "simulator",
+      "app": "android.eas"
+    },
+    "android.sim.local": {
+      "device": "simulator",
+      "app": "android.local"
+    }
+  }
+}
