@@ -9,7 +9,7 @@ Workout accountability app
 - [x] set up nx, expo, and react native client app
 - [ ] set up backend app
 - [ ] set up pipeline, deployment and hosting
-- [ ] FE routing
+- [x] FE routing
 
 #### Signup / login page
 

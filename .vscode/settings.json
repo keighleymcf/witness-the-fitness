@@ -1,8 +1,13 @@
 {
-  "eslint.format.enable": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "typescript.tsdk": "node_modules/typescript/lib",
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll": true
-  }
+    "source.fixAll.eslint": true
+  },
+  "prettier.singleQuote": false,
+  "editor.tabSize": 2,
+  "i18n-ally.localesPaths": "src/i18n",
+  "i18n-ally.keystyle": "nested",
+  "svg.preview.background": "black",
+  "cSpell.words": ["bgcolor", "PAYMENTDETAILS", "Rapyd"]
 }
