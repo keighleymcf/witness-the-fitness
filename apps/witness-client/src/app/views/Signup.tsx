@@ -10,7 +10,7 @@ export const Signup = ({ navigation }: HomeProps) => {
       <Text>Insert google oauth signup here</Text>
       <Button
         title="Sign up with goog (aka skip and go to workout)"
-        onPress={() => navigation.navigate("Workout")}
+        onPress={() => navigation.navigate("Dashboard")}
       />
     </View>
   );

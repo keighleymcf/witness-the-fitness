@@ -1,13 +1,12 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { RootStackParamList } from "../types/navigation";
-import { Text, Button, View } from "react-native";
+import { RootStackParamList, TabParamList } from "../types/navigation";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Workout } from "./Workout";
 import { Crew } from "./Crew";
 
 type DashboardProps = NativeStackScreenProps<RootStackParamList, "Dashboard">;
 
-const Tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator<TabParamList>();
 
 export const Dashboard = ({ navigation }: DashboardProps) => {
   return (

@@ -10,7 +10,7 @@ export const Login = ({ navigation }: HomeProps) => {
       <Text>Insert google oauth login here</Text>
       <Button
         title="Log in with goog (aka skip and go to workout)"
-        onPress={() => navigation.navigate("Workout")}
+        onPress={() => navigation.navigate("Dashboard")}
       />
     </View>
   );

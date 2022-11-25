@@ -11,6 +11,7 @@ import { Signup } from "./views/Signup";
 import { RootStackParamList } from "./types/navigation";
 import { Workout } from "./views/Workout";
 import { Crew } from "./views/Crew";
+import { Dashboard } from "./views/Dashboard";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -36,8 +37,7 @@ const App = () => {
           component={Signup}
           options={{ title: "Sign up" }}
         />
-        <Stack.Screen name="Workout" component={Workout} />
-        <Stack.Screen name="Crew" component={Crew} />
+        <Stack.Screen name="Dashboard" component={Dashboard} />
       </Stack.Navigator>
       {/* <StatusBar barStyle="dark-content" />
       <SafeAreaView>
