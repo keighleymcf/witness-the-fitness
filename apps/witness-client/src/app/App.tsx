@@ -9,9 +9,8 @@ import { Home } from "./views/Home";
 import { Login } from "./views/Login";
 import { Signup } from "./views/Signup";
 import { RootStackParamList } from "./types/navigation";
-import { Workout } from "./views/Workout";
-import { Crew } from "./views/Crew";
-import { Dashboard } from "./views/Dashboard";
+
+import { Dashboard } from "./navigation/Dashboard";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 

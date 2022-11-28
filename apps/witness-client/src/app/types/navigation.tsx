@@ -4,10 +4,9 @@ export type RootStackParamList = {
   Login: undefined;
   Dashboard: undefined;
   Workout: undefined;
-  Crew: undefined;
 };
 
 export type TabParamList = {
   Workout: undefined;
-  Crew: undefined;
+  CrewBoard: undefined;
 };
